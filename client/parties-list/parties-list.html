@@ -1,11 +1,13 @@
 <div>
-  <parties-form></parties-form>
+    <parties-form *ng-if='service.someProp' [test]='true'></parties-form>
+    <button *ng-if='!service.hideButton' class='btn btn-info' (click)='addForm()'>Add Party</button>
+    <accounts-ui></accounts-ui>
   <ul>
     <li *ng-for="#party of parties">
-      <a [router-link]="['/PartyDetails', {partyId: party._id}]">{{party.name}}</a>
+      <h3><a [router-link]="['/PartyDetails', {partyId: party._id}]">{{party.name}}</a></h3>
       <p>{{party.description}}</p>
       <p>{{party.location}}</p>
-      <button (click)="removeParty(party)">X</button>
+      <button  class='btn btn-danger' (click)="removeParty(party)">X</button>
     </li>
   </ul>
 </div>
