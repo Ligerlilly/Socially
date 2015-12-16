@@ -7,6 +7,7 @@ import {Component, View} from 'angular2/angular2';
 import {FORM_DIRECTIVES, FormBuilder, Control, ControlGroup, Validators} from 'angular2/angular2';
 
 import {Parties} from 'collections/parties';
+import {RouterLink} from 'angular2/router';
 
 
 import {InjectUser} from 'meteor-accounts';
@@ -34,10 +35,10 @@ import {Service} from 'client/services/service';
     </div>
     <label>Public</label>
     <button class='btn btn-success'>Save</button>
-    <button (click)='hideForm()' class='btn btn-danger'>cancel</button>
+    <button [router-link]="['/PartiesList']" (click)='hideForm()' class='btn btn-danger'>cancel</button>
     </form>
     `,
-    directives: [FORM_DIRECTIVES]
+    directives: [FORM_DIRECTIVES, RouterLink]
 })
 @InjectUser()
 export class PartiesForm {
