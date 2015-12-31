@@ -61,6 +61,7 @@ export class PartiesForm {
     addParty(party) {
         if (this.partiesForm.valid) {
             if (Meteor.userId()) {
+                //console.log(Meteor.userId());
                 Parties.insert({
                     name: party.name,
                     description: party.description,

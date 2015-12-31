@@ -3,5 +3,5 @@ declare type Party = {
   name: string,
   description?: string,
   location: string,
-  user_id: string,
+  user_id?: string,
 }

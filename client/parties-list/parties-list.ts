@@ -29,7 +29,7 @@ export class PartiesList {
     }
 
     removeParty(party) {
-        if (Meteor.userId() === "jMN69S8aBcyXz5FjY") {
+        if (Meteor.user().profile.name ===  'Ligerlilly') {
           Parties.remove(party._id);
         }
         else {
